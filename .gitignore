@@ -1,0 +1,4 @@
+*.pdf
+assets/**
+!assets/**/
+!assets/**/*.typ
