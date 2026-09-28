@@ -156,7 +156,7 @@
     ),
     coarse: Geom-granularity(
       max-dist: 5,
-      max-angle: 10deg,
+      max-angle: 5deg,
       min-dist: 0.5,
     ),
     // Use this to generate scatter plot

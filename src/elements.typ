@@ -9,8 +9,8 @@
 /// The reproduction condition is not yet clear.
 #let _offset(pair) = {
   let (x, y) = pair
-  // return (x + epsilon-for-algo, y)
-  return (x, y)
+  return (x + epsilon-for-algo, y)
+  // return (x, y)
 }
 
 

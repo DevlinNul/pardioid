@@ -1,14 +1,9 @@
 #import "@preview/tidy:0.4.3": *
 #import "@local/pardioid:0.1.0"
 #import "preamble.typ": *
-
-// 给draw模块的每一个函数都加上一个实例
-
+#import "@preview/physica:0.9.8": dv
 
 #import "my-tidy-style.typ" as style
-
-#show link: set text(fill: blue)
-// #show raw.where(block: false): it => box(it, inset: 2pt, radius: 0.5em, stroke: 0.3pt + black)
 
 
 #let under-heavy-line(it, color: orange, depth: 0.5em, alpha: 25%, offset: auto) = {
@@ -16,14 +11,6 @@
   let s-offset = if offset == auto { -depth / 4 } else { offset }
   underline(it, stroke: s-color + depth, evade: false, background: true, offset: s-offset)
 }
-
-#set raw(lang: "typ")
-
-#show heading.where(level: 1): set align(center)
-#show heading.where(level: 2): box.with(stroke: 0.3pt + blue, inset: 4pt, radius: 1em, fill: aqua.transparentize(50%))
-// #show heading.where(level: 2): set text(size: 1.2em)
-#show heading.where(level: 3): under-heavy-line
-#show heading.where(level: 3): set text(size: 1.3em)
 
 #let show-module = show-module.with(style: style, break-param-descriptions: true)
 #let parse-module = parse-module.with(
@@ -43,22 +30,6 @@
   ),
 )
 
-// #set heading(numbering: (..nums) => {
-//   // A magic number from `HEADING_RULE` in "crates/typst-layout/src/rules.rs".
-//   h(-0.3em)
-// })
-#set page(margin: (y: 2em))
-
-#let display(body) = {
-  block(stroke: aqua.transparentize(50%) + 0.03em, body)
-}
-
-
-#show: render-examples.with(
-  scope: (display: display, pardioid: pardioid),
-  layout: style.default-layout-example.with(ratio: 3),
-)
-
 #let my-ref(name, is-fn: true, label-prefix: label-prefix, show-name: none) = {
   link(label(label-prefix + name + if is-fn { "()" } else { none }), if show-name == none { name } else { show-name })
 }
@@ -69,6 +40,51 @@
 }
 
 
+#let display(body) = {
+  block(stroke: aqua.transparentize(50%) + 0.03em, body)
+}
+
+// #set heading(numbering: (..nums) => {
+//   // A magic number from `HEADING_RULE` in "crates/typst-layout/src/rules.rs".
+//   h(-0.3em)
+// })
+
+#set page(margin: (y: 2em))
+
+
+#set raw(lang: "typ")
+
+#show heading.where(level: 1): set align(center)
+#show heading.where(level: 2): box.with(stroke: 0.3pt + blue, inset: 4pt, radius: 1em, fill: aqua.transparentize(50%))
+// #show heading.where(level: 2): set text(size: 1.2em)
+#show heading.where(level: 3): under-heavy-line
+#show heading.where(level: 3): set text(size: 1.3em)
+
+#show: render-examples.with(
+  scope: (display: display, pardioid: pardioid),
+  layout: style.default-layout-example.with(ratio: 3),
+)
+
+#show link: set text(fill: blue)
+
+#let version = toml("/typst.toml").package.version
+#let title = "Pardioid Manual (version " + str(version) + ")"
+#let author = "DevlinNul"
+#let date = datetime.today().display()
+#set document(
+  title: title,
+  author: author,
+)
+
+#align(center)[
+  #std.title()
+
+  #author
+
+  #date
+]
+
+#outline(depth: 3)
 
 = Tutorial
 
@@ -78,7 +94,7 @@ Pardioid mainly provides two functions: #my-ref("parametric-curve-2d") and #my-r
 
 This package uses no `context`.
 
-Note that the following are not yet supported: `mark`, `arrow`, content placement, and an inline style system.
+Note that the following are not yet supported: `mark`, `arrow`, content placement, and an scoped style system.
 
 === parametric-curve-2d
 
@@ -141,6 +157,11 @@ In the examples below, `#import "@local/pardioid:0.1.0"` and the definition of `
 )
 ```
 
+Some default values worth noting:
+- `t-range`: `Range(-5, 5)`
+- `clip-box`: `Axes(x: Range(-5, 5), y: Range(-5, 5))`
+- `viewport`: `auto`
+
 === canvas
 
 In a canvas, you can draw multiple curves at once in the same Cartesian coordinate system. A simple example:
@@ -182,6 +203,9 @@ All currently available functions in the draw module are listed below. For more 
 }
 
 In a canvas, elements are drawn in the order they appear, so later shapes are painted on top of earlier ones.
+
+Some default values worth noting:
+- `viewport`: `Axes(x: Range(-5, 5), y: Range(-5, 5))`
 
 === Basic Styles
 
@@ -395,7 +419,7 @@ See #my-ref("parametric-curve-2d.detect-edge", is-fn: false, show-name: "detect-
 
 Pardioid has two samplers for `draw.curve` and `parametric-curve-2d`: a uniform sampler and a geometry sampler. When sampling a curve, it first uses the uniform sampler (controlled by `init-samples`) and then the geometry sampler (controlled by `geom-granularity` and `max-depth`).
 
-The geometry sampler uses `geom-granularity` to decide whether a sampling interval is acceptable. If it is acceptable, linear interpolation is considered a good enough approximation of the local curve, and the interval is drawn as a single line segment connecting its endpoints. If not, the interval is bisected and the subintervals are checked in the same way. If `max-depth` is reached and a subinterval is still unacceptable, the local parameter speed is too high for linear interpolation to be reliable, so only the interval's endpoints are drawn, with no line between them.
+The geometry sampler uses `geom-granularity` to decide whether a sampling interval is acceptable. If it is acceptable, linear interpolation is considered a good enough approximation of the local curve, and the interval is drawn as a single line segment connecting its endpoints. If not, the interval is bisected and the subintervals are checked in the same way. If `max-depth` is reached and a subinterval is still unacceptable, the local parameter speed (e.g., $v := sqrt((dv(x, t))^2 + (dv(y, t))^2)$, or using any other norm) is too high for linear interpolation to be reliable, so only the interval's endpoints are drawn, with no line between them.
 
 With this sampling scheme, you can use a coarser `geom-granularity` (`geom-presets.coarse`) for smooth curves with well-behaved parameterizations to get faster processing, use a finer granularity (`geom-presets.fine`) for pathological parametric curves to ensure correct rendering, and use special `geom-granularity` presets to draw polyline charts (`geom-presets.polyline`) and scatter plots (`geom-presets.pointwise`).
 
@@ -422,9 +446,9 @@ To support sampling intervals containing `float.inf`, an $epsilon$ (epsilon-for-
 ))
 ```
 
-Since `pointwise` is implemented as never acceptable, it always triggers subdivision. When using `pointwise`, lower `max-depth` and `init-samples`, and if necessary set `max-depth` to 1. Otherwise, recursing to the maximum depth everywhere will exhaust your memory and CPU.
+Since `pointwise` is implemented as never acceptable, it always triggers subdivision. When using `pointwise`, lower `max-depth` and `init-samples`, and if necessary set `max-depth` to 1. Otherwise, recursing to the maximum depth everywhere will exhaust your memory and CPU. By the way, drawing points may fail due to #link("https://github.com/typst/typst/issues/8894")[\#8894].
 
-`polyline` is always accepted, so it never triggers subdivision and `max-depth` has no effect.
+`polyline` is always accepted, so it never triggers subdivision and `max-depth` has no effect. Remember to lower `init-samples`, or you may end up with an extremely smooth-looking curve rather than a polyline.
 
 ```example
 #display(pardioid.parametric-curve-2d(
@@ -464,4 +488,43 @@ For the meaning of each key in `geom-granularity`, see #my-ref("parametric-curve
 
 = Manual For Developers
 
+I do not want any part of this package to introduce `context`.
 
+I currently have no idea how to support `mark`, `arrow`, and `anchor`.
+
+As for the style system, I only plan to introduce scoped styles, that is, all styles are defined inside a canvas and apply only inside that canvas. A possible call form is:
+```typ
+#canvas(
+  {
+    import draw: *
+    set-stroke-config(Stroke-config(stroke-mode: "merge"))
+    set-stroke(olive + 2pt)
+    // olive + 2pt
+    circle((1, 1))
+    set-stroke(black)
+    // black + 2pt
+    circle((0, 0))
+  }
+)
+```
+
+For public modules (e.g., `draw.typ`), the helper functions they need are defined in `_module-name` (e.g., `_draw.typ`), even though this cannot prevent the helper functions from being exposed in a wildcard import.
+
+Functions in `elements.typ` all return values of type `Element`.
+
+An `Element` has the form:
+```typ
+#(
+  bounds: bounds,
+  render: ctx => drawable,
+)
+```
+where `bounds` is the tight axis-aligned bounding box, `ctx` is the screen layout information controlled by the `canvas`, and `drawable` is a `content` that can be displayed directly.
+
+Functions in `draw.typ` should be called inside `canvas`.
+Each function in the draw module accepts geometry information and style information used to determine a primitive (the style system may later be extracted from the draw module, but currently it is not).
+Each function in the draw module must directly compute, based on the provided geometry information, the tight axis-aligned bounding box (bounds) of the target primitive in Cartesian coordinates, and return a `_gen-draw` function call as its result.
+The arguments passed to `_gen-draw` are the computed tight axis-aligned bounding box (bounds) and a `render`, which is a single-argument function that takes a positional parameter `ctx` and returns `content`.
+`ctx` is a dictionary that stores the screen layout information of the canvas onto which this primitive will be drawn, currently containing two fields: `viewport` and `length`.
+
+Note that all `_gen-draw` does is generate an array containing exactly one `Element`. Therefore, when a primitive originates from a function in `elements.typ`, the call should take the form `_gen-draw(.._parametric-curve-2d(...))`, i.e., it spreads the result of an `Element` function call.

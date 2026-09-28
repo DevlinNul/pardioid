@@ -16,10 +16,18 @@
 }
 
 /// Draw a single point.
+///
+/// Since a `point`'s bounding box is a single point (the center of the circle for `cap == "round"` or of the square for `cap == "square"`), setting `viewport` to `auto` may not fully contain the rendered point.
+/// This behavior is expected.
+/// If you need the `point`'s shape to lie entirely within the viewport, adjust the `canvas`'s `inset`, for example `inset = point.width / 2`.
+///
+/// Waiting for #link("https://github.com/typst/typst/issues/8894")[\#8894].
+/// Currently, this function may fail to produce visible output when exporting to PDF (PNG is reliable, though).
+/// However, it is expected to work in Tinymist's web preview.
 #let point(
   /// Cartesian coordinates of the point.
   /// -> Coord
-  point,
+  coord,
 
   /// Width of the point.
   /// -> length
@@ -46,14 +54,15 @@
     stroke-mode: "merge",
   )
   let stroke = resolve-stroke(paint + width, stroke-config: stroke-config)
-  let bounds = resolve-bounds(none)
+  // let bounds = resolve-bounds(none)
+  let bounds = resolve-bounds(Axes(x: (coord.first(),) * 2, y: ((coord.last(),) * 2)))
   return _gen-draw(
     bounds: bounds,
     render: ctx => {
       let args = (viewport: ctx.viewport, scale: (ctx.length, -ctx.length))
       std.curve(
-        std.curve.move(cartesian-to-screen(point, ..args)),
-        std.curve.line(cartesian-to-screen(point, ..args)),
+        std.curve.move(cartesian-to-screen(_offset(coord), ..args)),
+        std.curve.line(cartesian-to-screen(coord, ..args)),
         stroke: stroke,
       )
     },
@@ -72,7 +81,7 @@
 
   /// See @stroke.
   /// #ret stroke
-  stroke: auto,
+  stroke: default-base-stroke,
 
   /// See @stroke-config.
   /// -> Stroke-config
@@ -100,7 +109,7 @@
 
   /// See @stroke.
   /// #ret stroke
-  stroke: auto,
+  stroke: default-base-stroke,
 
   /// See @stroke-config.
   /// -> Stroke-config
@@ -139,7 +148,7 @@
 
   /// See @stroke.
   /// #ret stroke
-  stroke: auto,
+  stroke: default-base-stroke,
 
   /// See @stroke-config.
   /// -> Stroke-config
@@ -181,7 +190,7 @@
 
   /// See @stroke.
   /// #ret stroke
-  stroke: auto,
+  stroke: default-base-stroke,
 
   /// See @stroke-config.
   /// -> Stroke-config
@@ -225,7 +234,7 @@
 
   /// See @stroke.
   /// #ret stroke
-  stroke: auto,
+  stroke: default-base-stroke,
 
   /// See @stroke-config.
   /// -> Stroke-config
@@ -266,7 +275,7 @@
 #let number-plane(
   /// See @stroke.
   /// #ret stroke
-  stroke: auto,
+  stroke: default-base-stroke,
 
   /// See @stroke-config.
   /// -> Stroke-config
@@ -304,7 +313,7 @@
 
   /// See @stroke.
   /// #ret stroke
-  stroke: auto,
+  stroke: default-base-stroke,
 
   /// See @stroke-config.
   /// -> Stroke-config
@@ -348,7 +357,7 @@
 
   /// See @stroke.
   /// #ret stroke
-  stroke: auto,
+  stroke: default-base-stroke,
 
   /// See @stroke-config
   /// -> Stroke-config

@@ -2,3 +2,5 @@
 assets/**
 !assets/**/
 !assets/**/*.typ
+!assets/**/*.png
+release.sh

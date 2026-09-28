@@ -1,4 +1,4 @@
-#import "/src/lib.typ": *
+#import "@local/pardioid:0.1.0": *
 
 #let display(body) = {
   block(stroke: aqua.transparentize(50%) + 0.03em, body)

@@ -1,9 +1,6 @@
-// #import "utils.typ": *
-
-
 #let start-prefix = "#start "
 #let end-prefix = "#end "
-#let path-prefix = "/src/"
+#let path-prefix = "../src/"
 
 #let extract-region(src, start-marker, end-marker) = {
   let lines = src.split("\n")

@@ -143,7 +143,7 @@
   return (left, right)
 }
 
-// AABB is short for axis-lligned bounding box
+// AABB is short for axis-aligned bounding box
 #let get-aabb(..vertices) = {
   import calc: max, min
   assert.eq(vertices.named().len(), 0)

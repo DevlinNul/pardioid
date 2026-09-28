@@ -3,6 +3,16 @@
 #import "utils.typ": *
 
 
+/// This function avoids zero-length `std.curve.line`.
+/// It can be removed once #link("https://github.com/typst/typst/issues/8894")[#8894] is fixed.
+///
+/// The reproduction condition is not yet clear.
+#let _offset(pair) = {
+  let (x, y) = pair
+  return (x + epsilon-for-algo, y)
+  // return (x, y)
+}
+
 // viewport is of type Rect
 #let cartesian-to-screen(coord, origin: (auto, auto), scale: (20pt, -20pt), viewport: Rect) = {
   assert.ne(viewport, Rect)
