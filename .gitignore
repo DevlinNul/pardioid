@@ -4,3 +4,4 @@ assets/**
 !assets/**/*.typ
 !assets/**/*.png
 release.sh
+replace.sh

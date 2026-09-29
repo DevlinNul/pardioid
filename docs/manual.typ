@@ -1,5 +1,6 @@
 #import "@preview/tidy:0.4.3": *
-#import "@local/pardioid:0.1.0"
+// #import "@preview/pardioid:0.1.0"
+#import "@preview/pardioid:0.1.0"
 #import "preamble.typ": *
 #import "@preview/physica:0.9.8": dv
 
@@ -112,7 +113,8 @@ Here is a simple example. `vector-fn` is the parametric equation of an ellipse, 
 `length` is the screen length corresponding to one Cartesian coordinate unit, with a default value of `1em`. If the figure appears too small, you can increase it, for example to `25pt` or `3em`.
 
 ```example
-#import "@local/pardioid:0.1.0"
+>>> #import "@preview/pardioid:0.1.0"
+<<< #import "@preview/pardioid:0.1.0"
 
 #let display(body) = {
   block(stroke: aqua.transparentize(50%) + 0.03em, body)
@@ -128,7 +130,7 @@ Here is a simple example. `vector-fn` is the parametric equation of an ellipse, 
 )
 ```
 
-In the examples below, `#import "@local/pardioid:0.1.0"` and the definition of `display` are omitted by default.
+In the examples below, `#import "@preview/pardioid:0.1.0"` and the definition of `display` are omitted by default.
 
 `viewport` is either `auto` or of type `Axes`; `auto` is shorthand for `Axes(x: auto, y: auto)`. Here `x` and `y` are either `auto` or of type `Range`, representing the horizontal and vertical directions respectively. `auto` uses the curve's actual bounding box in that direction, while `Range` uses the given range.
 

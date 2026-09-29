@@ -1,5 +1,5 @@
 
-#import "@local/pardioid:0.1.0": *
+#import "@preview/pardioid:0.1.0": *
 
 #set page(width: auto, height: auto, margin: 0pt)
 

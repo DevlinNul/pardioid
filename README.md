@@ -9,7 +9,7 @@ You can import pardioid by:
 #import "@preview/pardioid:0.1.0": *
 ```
 
-Here is the manual
+Here is the [manual]("https://github.com/DevlinNul/pardioid/releases/download/0.1.0/manual.pdf").
 
 ## Quick Start
 
