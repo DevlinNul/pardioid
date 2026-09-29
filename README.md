@@ -9,7 +9,7 @@ You can import pardioid by:
 #import "@preview/pardioid:0.1.0": *
 ```
 
-Here is the [manual]("https://github.com/DevlinNul/pardioid/releases/download/0.1.0/manual.pdf").
+Here is the [manual](https://github.com/DevlinNul/pardioid/releases/download/v0.1.0/manual.pdf).
 
 ## Quick Start
 
@@ -57,45 +57,49 @@ Clicking on any demo image below will bring you to the respective page containin
 
 <table style="width:100%; border-collapse:collapse; table-layout:fixed;">
   <tr>
-    <td style="width:25%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">cubic.typ</div>
-      <a href="./assets/cubic.typ"><img src="./assets/cubic.png" alt="cubic" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="./assets/cubic.typ"><img src="./assets/cubic.png" alt="cubic" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
-    <td style="width:25%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">detect-edge.typ</div>
-      <a href="./assets/detect-edge.typ"><img src="./assets/detect-edge.png" alt="detect edge" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="./assets/detect-edge.typ"><img src="./assets/detect-edge.png" alt="detect edge" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
-    <td style="width:25%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+  </tr>
+  <tr>
+    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">exponential-asymptotic-spiral.typ</div>
-      <a href="./assets/exponential-asymptotic-spiral.typ"><img src="./assets/exponential-asymptotic-spiral.png" alt="exponential asymptotic spiral" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="./assets/exponential-asymptotic-spiral.typ"><img src="./assets/exponential-asymptotic-spiral.png" alt="exponential asymptotic spiral" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
-    <td style="width:25%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">pardioid.typ</div>
-      <a href="./assets/pardioid.typ"><img src="./assets/pardioid.png" alt="pardioid" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="./assets/pardioid.typ"><img src="./assets/pardioid.png" alt="pardioid" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
   </tr>
   <tr>
     <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">pointwise.typ</div>
-      <a href="./assets/pointwise.typ"><img src="./assets/pointwise.png" alt="pointwise" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="./assets/pointwise.typ"><img src="./assets/pointwise.png" alt="pointwise" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
     <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">polyline.typ</div>
-      <a href="./assets/polyline.typ"><img src="./assets/polyline.png" alt="polyline" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
-    </td>
-    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
-      <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">power-functions.typ</div>
-      <a href="./assets/power-functions.typ"><img src="./assets/power-functions.png" alt="power functions" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
-    </td>
-    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
-      <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">tear-drop.typ</div>
-      <a href="./assets/tear-drop.typ"><img src="./assets/tear-drop.png" alt="tear drop" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="./assets/polyline.typ"><img src="./assets/polyline.png" alt="polyline" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
   </tr>
   <tr>
-    <td colspan="4" style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+      <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">power-functions.typ</div>
+      <a href="./assets/power-functions.typ"><img src="./assets/power-functions.png" alt="power functions" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+    </td>
+    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+      <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">tear-drop.typ</div>
+      <a href="./assets/tear-drop.typ"><img src="./assets/tear-drop.png" alt="tear drop" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">adaptive-sampling.typ</div>
-      <a href="./assets/adaptive-sampling.typ"><img src="./assets/adaptive-sampling.png" alt="adaptive sampling" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="./assets/adaptive-sampling.typ"><img src="./assets/adaptive-sampling.png" alt="adaptive sampling" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
   </tr>
 </table>
