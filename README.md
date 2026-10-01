@@ -59,47 +59,47 @@ Clicking on any demo image below will bring you to the respective page containin
   <tr>
     <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">cubic.typ</div>
-      <a href="./assets/cubic.typ"><img src="./assets/cubic.png" alt="cubic" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/cubic.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/cubic.png?raw=true" alt="Draw a cubic Bézier curve using a start point, an end point, and two control points." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
     <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">detect-edge.typ</div>
-      <a href="./assets/detect-edge.typ"><img src="./assets/detect-edge.png" alt="detect edge" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/detect-edge.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/detect-edge.png?raw=true" alt="Use the detect-edge option for a curve with jump discontinuities." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
   </tr>
   <tr>
-    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">exponential-asymptotic-spiral.typ</div>
-      <a href="./assets/exponential-asymptotic-spiral.typ"><img src="./assets/exponential-asymptotic-spiral.png" alt="exponential asymptotic spiral" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/exponential-asymptotic-spiral.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/exponential-asymptotic-spiral.png?raw=true" alt="An exponential spiral demonstrating unbounded parameter intervals and a fallback where only the sample points themselves are reliable." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
-    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">pardioid.typ</div>
-      <a href="./assets/pardioid.typ"><img src="./assets/pardioid.png" alt="pardioid" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/pardioid.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/pardioid.png?raw=true" alt="Use merge-curve to stitch two semicircles and a curve into a heart shape." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
   </tr>
   <tr>
-    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">pointwise.typ</div>
-      <a href="./assets/pointwise.typ"><img src="./assets/pointwise.png" alt="pointwise" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/pointwise.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/pointwise.png?raw=true" alt="Show that geom-presets.pointwise can be used to draw the sample points of a curve without drawing lines." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
-    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">polyline.typ</div>
-      <a href="./assets/polyline.typ"><img src="./assets/polyline.png" alt="polyline" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/polyline.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/polyline.png?raw=true" alt="Show that geom-presets.polyline can be used to draw a polyline chart." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
   </tr>
   <tr>
-    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">power-functions.typ</div>
-      <a href="./assets/power-functions.typ"><img src="./assets/power-functions.png" alt="power functions" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/power-functions.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/power-functions.png?raw=true" alt="Draw multiple power function curves using a for loop." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
-    <td style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td style="width:50%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">tear-drop.typ</div>
-      <a href="./assets/tear-drop.typ"><img src="./assets/tear-drop.png" alt="tear drop" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/tear-drop.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/tear-drop.png?raw=true" alt="Draw a teardrop shape with a gradient fill." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
   </tr>
   <tr>
-    <td colspan="2" style="padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
+    <td colspan="2" style="width:100%; padding:4pt; text-align:center; vertical-align:top; box-sizing:border-box;">
       <div style="font-family:monospace; font-size:9pt; margin-bottom:4pt;">adaptive-sampling.typ</div>
-      <a href="./assets/adaptive-sampling.typ"><img src="./assets/adaptive-sampling.png" alt="adaptive sampling" loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
+      <a href="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/adaptive-sampling.typ"><img src="https://github.com/DevlinNul/pardioid/blob/v0.1.0/assets/adaptive-sampling.png?raw=true" alt="Draw three curves whose shapes uniform sampling cannot reproduce but adaptive sampling can." loading="lazy" style="display:block;width:100%;height:auto;margin:0 auto;"></a>
     </td>
   </tr>
 </table>
